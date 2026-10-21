@@ -4,7 +4,7 @@ WordPress のトップページから辿れる内容を、依存パッケージ�
 
 ## トップ画像の追加
 
-既存の4枚は `banner-01.jpg`、`banner-02.png`、`banner-03.jpg`、`banner-04.jpg` です。`assets/` に `banner-05.jpg` を追加すると、次回のページ表示から5枚目として自動的に切り替わります。その後も `banner-06.jpg`、`banner-07.jpg` のように番号を続けてください。追加画像の拡張子は `.jpg`、`.jpeg`、`.png`、`.webp` に対応しています。番号は欠番なしにしてください。同じ番号で拡張子違いの画像を複数置いた場合は、上記の拡張子順で最初の画像を使用します。HTMLやJavaScriptの編集は不要です。
+現在は `banner-01.jpg` から `banner-21.jpg` まで連番の画像を公開しています（02番と05番は `.png`）。`assets/` に `banner-22.jpg` など次の番号の画像を追加すると、次回のページ表示から自動的に切り替え対象へ加わります。追加画像の拡張子は `.jpg`、`.jpeg`、`.png`、`.webp` に対応しています。番号は欠番なしにしてください。同じ番号で拡張子違いの画像を複数置いた場合は、上記の拡張子順で最初の画像を使用します。HTMLやJavaScriptの編集は不要です。
 
 ## ページ
 
@@ -24,7 +24,11 @@ WordPress のトップページから辿れる内容を、依存パッケージ�
 
 Instagram / Facebook の埋め込みは各サービス側の表示設定・閲覧環境によって表示されない場合があります。SNSページに各公式ページへのリンクも用意しています。Facebook のページプラグインは `show_posts=true` を指定して公開投稿を表示します。ホームの案内ブロックでは、静的サイトだけで最新4件を安定して取得できないため、Instagramのアイコンから公式アカウントへ案内しています。
 
-歴史資料の PDF 3点は `assets/history/` に、SNSちらしの PDF は `assets/sns-flyer.pdf` に保存しました。連絡先・住所・広報紙 URL が現行のものか確認し、公開先の独自ドメインと HTTPS を設定してください。
+歴史資料の PDF 3点は `assets/history/` に、SNSちらしの PDF は `assets/sns-flyer.pdf` に保存しました。連絡先・住所・広報紙 URL が現行のものか、運用時に確認してください。
+
+## 公開先
+
+GitHub Pages で [https://kagoya.github.io/omushi/](https://kagoya.github.io/omushi/) に公開しています。公開元は `main` ブランチのルートです。独自ドメイン `omushi.com` への切り替えはまだ行っていません。
 
 ## FTP を使わない更新
 
