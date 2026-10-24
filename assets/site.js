@@ -10,6 +10,7 @@ if (homeBanner) {
     'assets/banner-04.jpg',
   ];
   const caption = homeBanner.querySelector('.hero-caption');
+  const captionCount = homeBanner.querySelector('.hero-caption-count');
   const toggle = homeBanner.querySelector('.hero-toggle');
   const previous = homeBanner.querySelector('.hero-previous');
   const next = homeBanner.querySelector('.hero-next');
@@ -36,14 +37,15 @@ if (homeBanner) {
   function showBanner(index) {
     current = index % banners.length;
     homeBanner.style.backgroundImage = `url("${banners[current]}")`;
-    caption.textContent = `大虫地区の写真（${current + 1} / ${banners.length}）`;
+    captionCount.textContent = `${current + 1} / ${banners.length}`;
+    caption.setAttribute('aria-label', `大虫地区の写真 ${current + 1} / ${banners.length}`);
   }
 
   function setPlaying(playing) {
     if (timer) window.clearInterval(timer);
     const shouldPlay = playing && banners.length > 1;
     timer = shouldPlay ? window.setInterval(() => showBanner((current + 1) % banners.length), 3000) : null;
-    toggle.textContent = shouldPlay ? '一時停止' : '再開';
+    toggle.classList.toggle('is-paused', !shouldPlay);
     toggle.setAttribute('aria-label', shouldPlay ? '写真の自動切り替えを一時停止' : '写真の自動切り替えを再開');
   }
 
@@ -61,7 +63,8 @@ if (homeBanner) {
       const banner = await findBanner(number);
       if (!banner) break;
       banners.push(banner);
-      caption.textContent = `大虫地区の写真（${current + 1} / ${banners.length}）`;
+      captionCount.textContent = `${current + 1} / ${banners.length}`;
+      caption.setAttribute('aria-label', `大虫地区の写真 ${current + 1} / ${banners.length}`);
     }
   })();
 }
